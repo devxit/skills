@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python / tooling noise if someone runs validators locally
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+.skills-ref/
+
+# Env and secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# Editor
+.idea/
+.vscode/
+*.code-workspace
