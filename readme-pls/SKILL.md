@@ -3,7 +3,7 @@ name: readme-pls
 description: Creates, edits, and reviews README files using a structured 15-section guide with security rules, inferred-data confirmation, and deviation warnings. Use when drafting, rewriting, editing, or reviewing README.md, readme files, project documentation entry points, or when the user invokes readme-pls.
 metadata:
   author: DEVX IT
-  version: "1.0.0"
+  version: "1.1.0"
   source: https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie
 ---
 
@@ -17,7 +17,7 @@ Structured README authoring and review. Based on [15 Essential Sections Every RE
 
 Apply this skill for any task that:
 
-- Creates, rewrites, or edits a `README.md` (or `README`, `readme.md`) at repo root or package level
+- Creates, rewrites, or edits a `README.md` (or `README`, `readme.md`, `README.<locale>.md`) at repo root or package level
 - Reviews, audits, or asks for feedback on an existing README
 - Improves onboarding docs framed as README work
 
@@ -90,13 +90,49 @@ Wrong title for visibility = deviation (unless user overrides).
 
 Translate section titles to the README language chosen by the user.
 
+## Locales (multi-language) — mandatory
+
+When the README exists in **more than one language**:
+
+1. **One language per file.** Never stack full translations in the same `README.md` (no duplicated 15-section blocks).
+2. **Primary locale** → `README.md` (GitHub default). Confirm which language is primary.
+3. **Other locales** → `README.<BCP-47>.md` next to the primary file (examples: `README.pt-BR.md`, `README.es.md`, `README.ja.md`).
+4. **Cross-links on every version**, immediately under the title: flag emoji as the link text, pointing at each locale file (including the current one).
+
+```markdown
+# Project Name
+
+[🇺🇸](README.md) [🇧🇷](README.pt-BR.md)
+```
+
+Flag map (use the matching country/region; if none fits, use the locale code as link text, e.g. `[pt-BR](README.pt-BR.md)`):
+
+| Locale | Flag |
+|--------|------|
+| `en` (default US English) | 🇺🇸 |
+| `en-GB` | 🇬🇧 |
+| `pt-BR` | 🇧🇷 |
+| `pt-PT` | 🇵🇹 |
+| `es` | 🇪🇸 |
+| `fr` | 🇫🇷 |
+| `de` | 🇩🇪 |
+| `it` | 🇮🇹 |
+| `ja` | 🇯🇵 |
+| `zh-CN` | 🇨🇳 |
+| `zh-TW` | 🇹🇼 |
+
+5. Each locale file is a **complete README** (same profile/sections), not a stub that only links away.
+6. List all `README*.md` files in Project Structure when that section is present.
+
+Stacking languages in one file, or extra locales without reciprocal flag links = **deviation**.
+
 ## Startup workflow
 
 Run in order before writing or rewriting.
 
 ### 1. Language
 
-Ask which language(s) the README should use (e.g. en, pt-BR, bilingual). If bilingual, agree on structure (duplicate sections vs primary + link). Do not assume chat language or repo locale.
+Ask which language(s) the README should use (e.g. en, pt-BR). Do not assume chat language or repo locale. If **more than one** language: confirm the **primary** locale for `README.md`; extra locales go in separate files with flag links (§ Locales).
 
 ### 2. Gather context
 
@@ -118,6 +154,7 @@ I inferred the following. Correct anything wrong before I generate the README:
 | Visibility | open / closed |
 | Sizing | Lean / Standard / Full |
 | Tagline | … |
+| Languages | primary `README.md` locale + extra `README.<locale>.md` |
 
 Reply with corrections, or "confirmed" to proceed.
 ```
@@ -149,6 +186,7 @@ Follow [references/review-checklist.md](references/review-checklist.md). **Scan 
 
 **Profile:** Lean | Standard | Full (inferred)
 **Visibility:** open | closed
+**Locales:** single | split files + flag links
 
 ### Critical (fix before publish)
 - …
@@ -200,6 +238,8 @@ Common deviations:
 - Getting Started starting at `npm install` without `git clone` / `cd`
 - All 15 sections on a Lean project without justification
 - `How to Contribute?` on closed/corporate (or `How to Work?` on OSS) without override
+- Multiple languages in one README instead of `README.<locale>.md` files
+- Extra locale files without flag (or locale-code) cross-links on every version
 
 ## Additional resources
 

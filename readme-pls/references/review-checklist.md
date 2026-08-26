@@ -27,6 +27,7 @@ Infer and state in report:
 
 - [ ] **Sizing:** Lean | Standard | Full
 - [ ] **Visibility:** open | closed
+**Locales:** single file | `README.md` + `README.<locale>.md` with flag links (or missing/stacked = deviation)
 
 - [ ] Section 11 title matches visibility:
   - Open/OSS → "How to Contribute?" (or localized equivalent)
@@ -84,6 +85,8 @@ Report:
 - [ ] Code blocks have language tags where useful
 - [ ] No broken internal anchor links
 - [ ] Language consistent with stated README locale
+- [ ] Extra languages live in `README.<locale>.md`, not stacked in `README.md`
+- [ ] Every locale file has reciprocal flag (or locale-code) links under the title
 
 ---
 

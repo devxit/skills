@@ -2,6 +2,8 @@
 
 Copy, adapt, and remove sections that do not fit. Match project sizing (Lean / Standard / Full).
 
+**Locales:** extra languages go in `README.<BCP-47>.md` (e.g. `README.pt-BR.md`), never in the same file. Repeat the flag row on every version (SKILL.md § Locales). Omit the flag row if there is only one language.
+
 For section 11, use **one** variant based on project visibility (see comments below).
 
 ---
@@ -10,6 +12,9 @@ For section 11, use **one** variant based on project visibility (see comments be
 
 ```markdown
 # Project Name
+
+<!-- Extra locales: README.pt-BR.md etc. Put the same flag row on every file. -->
+[🇺🇸](README.md) [🇧🇷](README.pt-BR.md)
 
 One-line description of what this project does.
 
@@ -43,6 +48,8 @@ MIT — see [LICENSE](LICENSE).
 
 ```markdown
 # Project Name
+
+[🇺🇸](README.md) [🇧🇷](README.pt-BR.md)
 
 <!-- Optional: logo, badges, demo link -->
 
