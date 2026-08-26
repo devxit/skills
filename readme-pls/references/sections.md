@@ -14,7 +14,7 @@ These 15 sections are a **guide**, not a rigid checklist. Adapt to project size 
 - Clear project title (`# Title`)
 - 1–3 sentence pitch: what it is and who it's for
 - Optional: logo, badges (shields.io), screenshot, demo/video/article links
-- **Multi-language:** right under the title, flag links to every locale file (`README.md`, `README.pt-BR.md`, …). See SKILL.md § Locales. Do not put a second full translation in this file.
+- **Multi-language:** right under the title, flag links to every locale file (`README.md`, `README.pt-BR.md`, …). See SKILL.md § Locales. Do not put a second full translation in this file. After editing one locale, ask whether to update the others.
 
 **Avoid:** Long paragraphs, implementation details, jargon without context; stacking two languages in one README.
 

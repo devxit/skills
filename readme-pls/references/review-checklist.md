@@ -87,6 +87,7 @@ Report:
 - [ ] Language consistent with stated README locale
 - [ ] Extra languages live in `README.<locale>.md`, not stacked in `README.md`
 - [ ] Every locale file has reciprocal flag (or locale-code) links under the title
+- [ ] If applying README edits and siblings exist, ask to sync other `README.<locale>.md` (do not update them unprompted)
 
 ---
 
@@ -105,4 +106,4 @@ End report with:
 Apply these changes? (yes / partial / no)
 ```
 
-If user says **yes** or **partial** → switch to authoring workflow in SKILL.md (confirm inferred data before substantial rewrite).
+If user says **yes** or **partial** → switch to authoring workflow in SKILL.md (confirm inferred data before substantial rewrite). After edits, ask whether to update sibling locale files when they exist.

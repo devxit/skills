@@ -2,7 +2,7 @@
 
 Copy, adapt, and remove sections that do not fit. Match project sizing (Lean / Standard / Full).
 
-**Locales:** extra languages go in `README.<BCP-47>.md` (e.g. `README.pt-BR.md`), never in the same file. Repeat the flag row on every version (SKILL.md § Locales). Omit the flag row if there is only one language.
+**Locales:** extra languages go in `README.<BCP-47>.md` (e.g. `README.pt-BR.md`), never in the same file. Repeat the flag row on every version (SKILL.md § Locales). Omit the flag row if there is only one language. After editing any README, ask whether to update sibling locale files when they exist.
 
 For section 11, use **one** variant based on project visibility (see comments below).
 

@@ -3,7 +3,7 @@ name: readme-pls
 description: Creates, edits, and reviews README files using a structured 15-section guide with security rules, inferred-data confirmation, and deviation warnings. Use when drafting, rewriting, editing, or reviewing README.md, readme files, project documentation entry points, or when the user invokes readme-pls.
 metadata:
   author: DEVX IT
-  version: "1.1.0"
+  version: "1.0.0"
   source: https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie
 ---
 
@@ -123,6 +123,30 @@ Flag map (use the matching country/region; if none fits, use the locale code as 
 
 5. Each locale file is a **complete README** (same profile/sections), not a stub that only links away.
 6. List all `README*.md` files in Project Structure when that section is present.
+7. **After any create/edit of a README**, if sibling `README.<locale>.md` files exist in the same directory, **always ask** whether to update them. Do not assume; do not skip the question; do not update siblings until the user answers.
+
+Before writing, glob that directory for `README.md` / `README.*.md` (and `README`). After the edit, use `AskQuestion` when available:
+
+```markdown
+## readme-pls — sync locales?
+
+Updated: `README.md` (example)
+
+Sibling locale files found:
+- `README.pt-BR.md`
+
+Update the other locale file(s) to match this change?
+```
+
+Options (exactly these, plus Other):
+
+1. **Yes — all siblings** → apply the same change to every listed `README.<locale>.md` (translate/adapt; keep flag links and section structure).
+2. **Yes — pick files** → ask which siblings, then update only those.
+3. **No** → leave siblings unchanged; mention they may drift.
+
+Skip the question only when **no** sibling locale files exist in that directory.
+
+Silent skip of this prompt when siblings exist = **deviation**.
 
 Stacking languages in one file, or extra locales without reciprocal flag links = **deviation**.
 
@@ -136,7 +160,7 @@ Ask which language(s) the README should use (e.g. en, pt-BR). Do not assume chat
 
 ### 2. Gather context
 
-Read existing README and repo context (`package.json`, `LICENSE`, `docker-compose`, docs). **Do not open `.env`.**
+Read existing README and repo context (`package.json`, `LICENSE`, `docker-compose`, docs). Glob sibling `README*.md` in the same directory. **Do not open `.env`.**
 
 ### 3. Confirm inferred data (required before generate/rewrite)
 
@@ -167,7 +191,8 @@ Skip only fields the user already provided. On **review-only** (no edit): confir
 2. Gap analysis: missing sections vs profile; pick section 11 title from visibility.
 3. If requested edit violates precepts → deviation warning first.
 4. Write structured Markdown; add TOC with anchors if long.
-5. Suggest manual verification of Getting Started if you cannot run commands.
+5. If sibling `README.<locale>.md` files exist → **ask** whether to update them (§ Locales item 7). Wait for the answer before touching siblings.
+6. Suggest manual verification of Getting Started if you cannot run commands.
 
 Philosophy: README is an **entry point**, not the full manual. Link to `docs/`, `CONTRIBUTING.md`, etc. Prefer simple Mermaid diagrams on GitHub when useful.
 
@@ -205,7 +230,7 @@ Follow [references/review-checklist.md](references/review-checklist.md). **Scan 
 Apply these changes? (yes / partial / no)
 ```
 
-If user answers **yes** or **partial** → authoring workflow; confirm inferred data before substantial rewrite.
+If user answers **yes** or **partial** → authoring workflow; confirm inferred data before substantial rewrite. After applying README edits, still run the sibling-locale prompt if other `README.<locale>.md` files exist.
 
 ## Deviation warning
 
@@ -240,6 +265,7 @@ Common deviations:
 - `How to Contribute?` on closed/corporate (or `How to Work?` on OSS) without override
 - Multiple languages in one README instead of `README.<locale>.md` files
 - Extra locale files without flag (or locale-code) cross-links on every version
+- Editing one README while sibling `README.<locale>.md` files exist and not asking whether to update them
 
 ## Additional resources
 
