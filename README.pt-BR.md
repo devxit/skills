@@ -32,10 +32,10 @@ O público são times e pessoas que usam agentes de código e querem instalar ca
 
 ## Funcionalidades
 
-| Skill | Descrição |
-|-------|-----------|
-| [`readme-pls`](readme-pls/) | Cria, edita e revisa README com 15 seções, regras de segurança e confirmação de dados inferidos |
-| [`graphify-me`](graphify-me/) | Instala e configura [Graphify](https://github.com/Graphify-Labs/graphify) no projeto, com export opcional para Obsidian |
+| Skill | Versão | Descrição |
+|-------|--------|-----------|
+| [`readme-pls`](readme-pls/) | **1.3.0** | Cria, edita e revisa README com 15 seções, regras de segurança, confirmação de dados inferidos, MIT, idiomas extras em `README.<locale>.md` com links de bandeira, e pergunta se deve sincronizar os arquivos irmãos após editar |
+| [`graphify-me`](graphify-me/) | **1.2.0** | Instala e configura [Graphify](https://github.com/Graphify-Labs/graphify) no projeto, com export opcional para Obsidian |
 
 Instalação global via CLI `npx skills` (recomendado) ou, no caso do `graphify-me`, também via scripts Python do próprio pacote.
 
@@ -122,6 +122,13 @@ No agente (Cursor, Claude Code, etc.), peça algo coberto pela skill, por exempl
 - “instala graphify neste projeto” → deve seguir `graphify-me`
 
 O `graphify-me` ainda **não** configura Graphify no catálogo em si; isso acontece no **projeto alvo**. Guia completo: [`graphify-me/README.md`](graphify-me/README.md).
+
+Depois de puxar atualizações das skills, reinstale globalmente para o agente carregar o novo `SKILL.md` (ex.: `readme-pls` **1.3.0**):
+
+```bash
+npx skills add . --skill readme-pls -g -y
+npx skills add . --skill graphify-me -g -y
+```
 
 ## Configuração
 

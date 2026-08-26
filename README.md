@@ -32,10 +32,10 @@ It is for teams and individuals who want ready-made capabilities (structured REA
 
 ## Features
 
-| Skill | Description |
-|-------|-------------|
-| [`readme-pls`](readme-pls/) | Create, edit, and review READMEs with a 15-section guide, security rules, and inferred-data confirmation |
-| [`graphify-me`](graphify-me/) | Install and configure [Graphify](https://github.com/Graphify-Labs/graphify) in a project, with optional Obsidian export |
+| Skill | Version | Description |
+|-------|---------|-------------|
+| [`readme-pls`](readme-pls/) | **1.3.0** | Create, edit, and review READMEs with a 15-section guide, security rules, inferred-data confirmation, MIT, extra locales in `README.<locale>.md` with flag links, and a prompt to sync sibling locale files after edits |
+| [`graphify-me`](graphify-me/) | **1.2.0** | Install and configure [Graphify](https://github.com/Graphify-Labs/graphify) in a project, with optional Obsidian export |
 
 Install globally with the `npx skills` CLI (recommended). `graphify-me` also ships Python install scripts.
 
@@ -122,6 +122,13 @@ In your agent (Cursor, Claude Code, etc.), ask for something the skill covers, f
 - “install graphify in this project” → should follow `graphify-me`
 
 `graphify-me` does **not** wire Graphify into this catalog repo; that happens in a **target project**. Full guide: [`graphify-me/README.md`](graphify-me/README.md).
+
+After pulling skill updates, reinstall globally so agents load the new `SKILL.md` (e.g. `readme-pls` **1.3.0**):
+
+```bash
+npx skills add . --skill readme-pls -g -y
+npx skills add . --skill graphify-me -g -y
+```
 
 ## Configuration
 
