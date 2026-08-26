@@ -145,3 +145,4 @@ Mesmo fluxo; só muda o comando do passo 2. Pacote da skill permanece único.
 - [references/platform-checks.md](references/platform-checks.md) — OS / CLI / Obsidian  
 - Upstream: https://github.com/Graphify-Labs/graphify  
 - Spec: https://agentskills.io/specification  
+- License: MIT — [LICENSE](LICENSE)

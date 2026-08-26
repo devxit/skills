@@ -63,17 +63,18 @@ Uma skill instalada vira instrução que o agente carrega quando o pedido do usu
 
 ```
 .
-├── LICENSE                 # MIT (DEVX IT)
+├── LICENSE                 # MIT (DEVX IT) — catálogo
 ├── README.md               # inglês
 ├── README.pt-BR.md         # português
 ├── readme-pls/             # skill de README
+│   ├── LICENSE             # MIT
 │   ├── SKILL.md
 │   └── references/
 └── graphify-me/            # skill + instalador Graphify
-    ├── LICENSE
     ├── README.md
     ├── install.py
     └── graphify-me/        # pacote canônico (fonte única)
+        └── LICENSE         # MIT
 ```
 
 Detalhes de cada skill ficam no respectivo `SKILL.md` / README interno — este arquivo é só o ponto de entrada do catálogo em português.
@@ -150,7 +151,7 @@ Mantenha a skill como fonte única; instalação em agentes fica a cargo do `npx
 
 ## Licença
 
-MIT — veja [LICENSE](LICENSE). O pacote `graphify-me` também inclui [graphify-me/LICENSE](graphify-me/LICENSE) (MIT).
+MIT (DEVX IT) para este catálogo e para todas as skills — veja [LICENSE](LICENSE). Cada pacote de skill inclui o mesmo texto: [readme-pls/LICENSE](readme-pls/LICENSE), [graphify-me/graphify-me/LICENSE](graphify-me/graphify-me/LICENSE). O frontmatter de cada `SKILL.md` declara `license: MIT`.
 
 ## Agradecimentos
 

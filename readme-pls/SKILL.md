@@ -1,9 +1,10 @@
 ---
 name: readme-pls
 description: Creates, edits, and reviews README files using a structured 15-section guide with security rules, inferred-data confirmation, and deviation warnings. Use when drafting, rewriting, editing, or reviewing README.md, readme files, project documentation entry points, or when the user invokes readme-pls.
+license: MIT
 metadata:
   author: DEVX IT
-  version: "1.0.0"
+  version: "1.3.0"
   source: https://dev.to/georgekobaidze/15-essential-sections-every-readme-needs-give-your-project-what-it-deserves-fie
 ---
 
@@ -272,3 +273,4 @@ Common deviations:
 - Section criteria: [references/sections.md](references/sections.md)
 - Review checklist: [references/review-checklist.md](references/review-checklist.md)
 - Copy-paste templates: [references/template.md](references/template.md)
+- License: MIT — [LICENSE](LICENSE)

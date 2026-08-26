@@ -63,17 +63,18 @@ Once installed, a skill is loaded when the user request matches the `description
 
 ```
 .
-├── LICENSE                 # MIT (DEVX IT)
+├── LICENSE                 # MIT (DEVX IT) — catálogo
 ├── README.md               # English
 ├── README.pt-BR.md         # Portuguese
 ├── readme-pls/             # README skill
+│   ├── LICENSE             # MIT
 │   ├── SKILL.md
 │   └── references/
 └── graphify-me/            # Graphify skill + installer
-    ├── LICENSE
     ├── README.md
     ├── install.py
     └── graphify-me/        # canonical package (single source of truth)
+        └── LICENSE         # MIT
 ```
 
 Per-skill depth lives in each `SKILL.md` / nested README. This file is the catalog entry point.
@@ -150,7 +151,7 @@ Keep the skill package as the single source of truth; agent install is handled b
 
 ## License
 
-MIT — see [LICENSE](LICENSE). `graphify-me` also ships [graphify-me/LICENSE](graphify-me/LICENSE) (MIT).
+MIT (DEVX IT) for this catalog and every skill — see [LICENSE](LICENSE). Each skill package also ships the same text: [readme-pls/LICENSE](readme-pls/LICENSE), [graphify-me/graphify-me/LICENSE](graphify-me/graphify-me/LICENSE). `SKILL.md` frontmatter uses `license: MIT`.
 
 ## Acknowledgements
 

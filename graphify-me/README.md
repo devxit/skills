@@ -4,7 +4,7 @@ Agent Skill that installs and configures [Graphify](https://github.com/Graphify-
 
 - Spec: [Agent Skills](https://agentskills.io/specification)
 - Package: [`graphify-me/`](graphify-me/) (single source of truth — **no per-agent copies** in this repo)
-- License: MIT (DEVX IT)
+- License: MIT (DEVX IT) — [LICENSE](graphify-me/LICENSE) (same as catalog [LICENSE](../LICENSE))
 
 Works with **Cursor**, **Claude Code**, **Codex**, **OpenCode**, **Antigravity**, Gemini CLI, and other agents that read Agent Skills directories.
 
