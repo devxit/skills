@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repo-root installer: skill links + optional Graphify CLI."""
+"""Skill-package installer: skill links + optional Graphify CLI."""
 
 from __future__ import annotations
 
@@ -8,8 +8,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-SKILL = ROOT / "graphify-me"
+SKILL = Path(__file__).resolve().parent
 SCRIPTS = SKILL / "scripts"
 
 
