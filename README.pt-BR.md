@@ -43,7 +43,7 @@ Instalação global via CLI `npx skills` (recomendado) ou, no caso do `graphify-
 
 - Markdown + frontmatter Agent Skills (`SKILL.md`)
 - [Skills CLI](https://github.com/vercel-labs/skills) (`npx skills`)
-- Python 3.10+ apenas para `graphify-me` (`install.py` e scripts em `graphify-me/graphify-me/scripts/`)
+- Python 3.10+ apenas para `graphify-me` (`install.py` e scripts em `graphify-me/scripts/`)
 
 Não há runtime de aplicação nem `package.json` na raiz: o catálogo é documentação e pacotes de skill.
 
@@ -70,12 +70,16 @@ Uma skill instalada vira instrução que o agente carrega quando o pedido do usu
 │   ├── LICENSE             # MIT
 │   ├── SKILL.md
 │   └── references/
-└── graphify-me/            # skill + instalador Graphify
+└── graphify-me/            # skill Graphify
+    ├── LICENSE             # MIT
+    ├── SKILL.md
     ├── README.md
     ├── install.py
-    └── graphify-me/        # pacote canônico (fonte única)
-        └── LICENSE         # MIT
+    ├── references/
+    └── scripts/
 ```
+
+Cada pacote de skill fica **um nível** abaixo da raiz (`<skill>/SKILL.md`), que é o que a CLI `skills` varre por padrão. Aninhar o pacote mais fundo (ex.: `graphify-me/graphify-me/SKILL.md`) esconde a skill do `npx skills add`, a menos que se use `--full-depth`.
 
 Detalhes de cada skill ficam no respectivo `SKILL.md` / README interno — este arquivo é só o ponto de entrada do catálogo em português.
 
@@ -158,7 +162,7 @@ Mantenha a skill como fonte única; instalação em agentes fica a cargo do `npx
 
 ## Licença
 
-MIT (DEVX IT) para este catálogo e para todas as skills — veja [LICENSE](LICENSE). Cada pacote de skill inclui o mesmo texto: [readme-pls/LICENSE](readme-pls/LICENSE), [graphify-me/graphify-me/LICENSE](graphify-me/graphify-me/LICENSE). O frontmatter de cada `SKILL.md` declara `license: MIT`.
+MIT (DEVX IT) para este catálogo e para todas as skills — veja [LICENSE](LICENSE). Cada pacote de skill inclui o mesmo texto: [readme-pls/LICENSE](readme-pls/LICENSE), [graphify-me/LICENSE](graphify-me/LICENSE). O frontmatter de cada `SKILL.md` declara `license: MIT`.
 
 ## Agradecimentos
 
