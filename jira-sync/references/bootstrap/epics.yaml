@@ -1,0 +1,7 @@
+epics: []
+
+specialFolders:
+  support:
+    slug: support
+    mirrorPath: ".scratch/support/issues/"
+    description: Bugs reportados por cliente/tenant

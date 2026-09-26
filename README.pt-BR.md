@@ -36,6 +36,7 @@ O público são times e pessoas que usam agentes de código e querem instalar ca
 |-------|--------|-----------|
 | [`readme-pls`](readme-pls/) | **1.3.0** | Cria, edita e revisa README com 15 seções, regras de segurança, confirmação de dados inferidos, MIT, idiomas extras em `README.<locale>.md` com links de bandeira, e pergunta se deve sincronizar os arquivos irmãos após editar |
 | [`graphify-me`](graphify-me/) | **1.2.0** | Instala e configura [Graphify](https://github.com/Graphify-Labs/graphify) no projeto, com export opcional para Obsidian |
+| [`jira-sync`](jira-sync/) | **1.0.0** | Sincroniza JIRA com mirrors no repo via harness em `.jira/`; consolida duplicatas sem perda de informação |
 
 Instalação global via CLI `npx skills` (recomendado) ou, no caso do `graphify-me`, também via scripts Python do próprio pacote.
 

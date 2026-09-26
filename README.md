@@ -36,6 +36,7 @@ It is for teams and individuals who want ready-made capabilities (structured REA
 |-------|---------|-------------|
 | [`readme-pls`](readme-pls/) | **1.3.0** | Create, edit, and review READMEs with a 15-section guide, security rules, inferred-data confirmation, MIT, extra locales in `README.<locale>.md` with flag links, and a prompt to sync sibling locale files after edits |
 | [`graphify-me`](graphify-me/) | **1.2.0** | Install and configure [Graphify](https://github.com/Graphify-Labs/graphify) in a project, with optional Obsidian export |
+| [`jira-sync`](jira-sync/) | **1.0.0** | Sync JIRA with repo mirrors via `.jira/` harness config; consolidate duplicates without information loss |
 
 Install globally with the `npx skills` CLI (recommended). `graphify-me` also ships Python install scripts.
 
@@ -70,13 +71,20 @@ Once installed, a skill is loaded when the user request matches the `description
 │   ├── LICENSE             # MIT
 │   ├── SKILL.md
 │   └── references/
-└── graphify-me/            # Graphify skill
-    ├── LICENSE             # MIT
+├── graphify-me/            # Graphify skill
+│   ├── LICENSE             # MIT
+│   ├── SKILL.md
+│   ├── README.md
+│   ├── install.py
+│   ├── references/
+│   └── scripts/
+└── jira-sync/              # JIRA sync skill
+    ├── LICENSE
     ├── SKILL.md
     ├── README.md
-    ├── install.py
-    ├── references/
-    └── scripts/
+    └── references/
+        ├── bootstrap/      # copy → .jira/ in target project
+        └── dot-jira-layout.md
 ```
 
 Every skill package sits **one level** below the repo root (`<skill>/SKILL.md`), which is what the `skills` CLI scans by default. Nesting a package deeper (e.g. `graphify-me/graphify-me/SKILL.md`) hides it from `npx skills add` unless you pass `--full-depth`.
@@ -116,6 +124,7 @@ Without cloning, from GitHub:
 ```bash
 npx skills add devxit/skills --skill readme-pls -g -y
 npx skills add devxit/skills --skill graphify-me -g -y
+npx skills add devxit/skills --skill jira-sync -g -y
 ```
 
 ### Verify

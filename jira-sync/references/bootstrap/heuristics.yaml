@@ -1,0 +1,24 @@
+classification:
+  order:
+    - parentEpic
+    - labels
+    - keywords
+    - routes
+    - specialFolders
+
+  askQuestionWhen:
+    confidenceBelow: high
+    fields:
+      - epicSlug
+      - apps
+      - layer
+
+  appsOptions: []
+  layerOptions:
+    - tenant
+    - platform
+    - both
+
+rules: []
+
+routes: {}

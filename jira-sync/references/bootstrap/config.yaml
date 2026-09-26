@@ -1,0 +1,28 @@
+site:
+  host: your-org.atlassian.net
+  browseUrlTemplate: "https://{host}/browse/{key}"
+
+project:
+  key: PROJECT_KEY
+  name: Your Project
+
+issueKeyPattern: "PROJECT_KEY-\\d+"
+
+sync:
+  pendingLabel: needs-sync
+  scratchPathMarker: "**Scratch path:**"
+  duplicateLinkType: Duplicate
+  canonicalRule: oldest_created
+  duplicateMerge: duplicate-merge.yaml
+
+mirrors:
+  story: ".scratch/{epicSlug}/issues/{key}-{slug}.md"
+  bugTenant: ".scratch/support/issues/{key}-{slug}.md"
+  bugInternal: ".scratch/{epicSlug}/issues/{key}-{slug}.md"
+  epic: ".scratch/{epicSlug}/spec.md"
+  map: ".scratch/map.md"
+
+labels: {}
+
+docs:
+  issueTracker: docs/agents/issue-tracker.md

@@ -1,0 +1,1 @@
+project = PROJECT_KEY AND labels = needs-sync ORDER BY updated DESC

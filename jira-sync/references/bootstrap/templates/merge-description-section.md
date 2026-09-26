@@ -1,0 +1,3 @@
+## Consolidado de {duplicateKey}
+
+{uniqueContent}

@@ -1,0 +1,45 @@
+merge:
+  requiredBeforeClose: true
+  rule: zero_information_loss
+
+  sources:
+    - summary
+    - description
+    - environment
+    - comments
+    - attachments
+    - labels
+    - customFields
+    - remoteLinks
+    - acceptanceCriteria
+
+  dedupe:
+    text: normalized_trim_lowercase
+    attachment: filename_and_size
+
+  fetch:
+    issueView: evidence
+    richTextFormat: html
+
+  canonical:
+    descriptionSectionTitle: "Consolidado de {duplicateKey}"
+    enrichmentCommentTemplate: templates/canonical-enrichment-comment.md
+    attributeSource: true
+
+  mirror:
+    appendUniqueDescription: true
+    appendCommentsWithAttribution: true
+    sectionTitle: "## Consolidado de {duplicateKey}"
+
+  attachments:
+    strategy: copy_to_canonical
+    embedInlineImages: true
+    commentOnCanonical: true
+
+  closeDuplicateOnlyAfter:
+    - canonical_description_updated_or_unchanged_with_audit
+    - unique_comments_copied_or_none
+    - attachments_copied_or_none
+    - enrichment_comment_posted
+    - duplicate_link_created
+    - mirror_canonical_updated

@@ -1,0 +1,16 @@
+dev:
+  Backlog: backlog
+  "In Progress": in-progress
+  Done: done
+
+bugs:
+  Backlog: triage
+  Done: done
+
+epic:
+  Backlog: planned
+  Done: done
+
+absorbed:
+  markdownStatus: cancelled
+  supersededByField: "**Superseded by:**"

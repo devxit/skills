@@ -1,0 +1,30 @@
+provider: cursor-mcp-atlassian
+namespace: plugin-atlassian-atlassian
+
+probe:
+  tool: getAccessibleAtlassianResources
+  args: {}
+
+auth:
+  tool: mcp_auth
+  args: {}
+
+tools:
+  search: searchJiraIssuesUsingJql
+  get: getJiraIssue
+  create: createJiraIssue
+  edit: editJiraIssue
+  transition: transitionJiraIssue
+  comment: addOrEditJiraIssueComment
+  uploadAttachment: uploadAttachmentToJiraIssue
+  discover: discover
+  executeRead: executeRead
+  executeWrite: executeWrite
+
+session:
+  cloudIdCache: .jira/session.json
+
+attachments:
+  listOperation: discover
+  listKeywords: ["attachment", "get attachment", "download attachment"]
+  copyFlow: download_from_duplicate_then_upload_to_canonical

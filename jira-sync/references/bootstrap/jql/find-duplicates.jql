@@ -1,0 +1,1 @@
+project = PROJECT_KEY AND summary ~ "{query}" ORDER BY created ASC
